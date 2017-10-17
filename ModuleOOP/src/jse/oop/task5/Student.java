@@ -1,0 +1,51 @@
+package jse.oop.task5;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Student {
+    private String name;
+    private Map subjects = new HashMap<Subgect, Student.Mark>();
+
+    public Map getSubjects() {
+        return subjects;
+    }
+
+    public void setMarks(Subgect subject, Student.Mark mark){
+        mark.value = subject.isFloat() ? mark.getValue().doubleValue() : mark.getValue().intValue();
+        subjects.put(subject, mark);
+    }
+
+    public Student(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString(){
+        return name;
+    }
+    public static class Mark<T extends Number> {
+        public void setValue(T value) {
+            this.value = value;
+        }
+
+        private T value;
+
+        public Mark(T value) {
+            this.value = value;
+        }
+
+        public T getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            String s = null;
+            return s.valueOf(value);
+        }
+    }
+}
