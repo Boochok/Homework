@@ -23,10 +23,10 @@ class StatKit {
     }
 
     private Comparator<Stationery> getStationeryPriceComparator() {
-        return (s1, s2) -> {
-            if (s1.getPrice() > s2.getPrice())
+        return (stationery1, stationery2) -> {
+            if (stationery1.getPrice() > stationery2.getPrice())
                 return 1;
-            else if (s1.getPrice() == s2.getPrice())
+            else if (stationery1.getPrice() == stationery2.getPrice())
                 return 0;
             else
                 return -1;
@@ -37,7 +37,7 @@ class StatKit {
     }
 
     private Comparator<Stationery> getStationeryNameComparator() {
-        return (s1, s2) -> s1.getName().compareTo(s2.getName());
+        return (stationery1, stationery2) -> stationery1.getName().compareTo(stationery2.getName());
     }
 }
 

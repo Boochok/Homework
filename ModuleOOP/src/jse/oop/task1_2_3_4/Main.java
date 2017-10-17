@@ -20,7 +20,5 @@ class Main {
         System.out.println(stkit.getKit());
         Scissors scissors = new Scissors(50);
         stkit.setKit(scissors);
-
-
     }
 }
