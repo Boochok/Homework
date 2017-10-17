@@ -11,8 +11,11 @@ class Eraser extends Stationery {
     public double getPrice() {
         return price;
     }
+
     @Override
-    public String toString(){
-        return String.format("Eraser: prise = %.2f", price);
+    public String toString() {
+        return "Eraser{" +
+                "price=" + price +
+                '}';
     }
 }

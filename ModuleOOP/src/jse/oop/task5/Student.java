@@ -5,16 +5,6 @@ import java.util.Map;
 
 public class Student {
     private String name;
-    private Map subjects = new HashMap<Subgect, Student.Mark>();
-
-    public Map getSubjects() {
-        return subjects;
-    }
-
-    public void setMarks(Subgect subject, Student.Mark mark){
-        mark.value = subject.isFloat() ? mark.getValue().doubleValue() : mark.getValue().intValue();
-        subjects.put(subject, mark);
-    }
 
     public Student(String name) {
         this.name = name;
@@ -22,6 +12,17 @@ public class Student {
     public String getName() {
         return name;
     }
+
+    private Map subjects = new HashMap<Subject, Student.Mark>();
+
+    public void subjectsAndMarks(Subject subject, Student.Mark mark){
+        mark.value = subject.isFloat() ? mark.getValue().doubleValue() : mark.getValue().intValue();
+        subjects.put(subject, mark);
+    }
+    public Map getSubjects() {
+        return subjects;
+    }
+
 
     @Override
     public String toString(){

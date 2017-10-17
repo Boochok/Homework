@@ -1,11 +1,16 @@
 package jse.oop.task5;
 
-public enum Subgect {
+public enum Subject {
     MATH {
+        public boolean isFloat() {
+            return true;
+        }
+    }, BIOLOGY {
         public boolean isFloat() {
             return false;
         }
-    }, BIOLOGY {
+    }, PHYSICS{
+        @Override
         public boolean isFloat() {
             return true;
         }

@@ -10,6 +10,9 @@ class Main {
         Pen pen = new Pen(Pen.Color.BLACK, 20);
         StatKit stkit = new StatKit();
         stkit.setKit(eraser);
+        stkit.setKit(notepad);
+        stkit.setKit(pencil);
+        stkit.setKit(pen);
         System.out.println(stkit.getKit());
         stkit.sortKitPrice();
         System.out.println(stkit.getKit());
