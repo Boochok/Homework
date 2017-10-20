@@ -1,4 +1,4 @@
-package jse.oop.task1_2_3_4;
+package hw.oop.task1_2_3_4;
 
 import java.util.ArrayList;
 

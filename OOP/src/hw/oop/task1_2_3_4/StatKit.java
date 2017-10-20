@@ -1,4 +1,4 @@
-package jse.oop.task1_2_3_4;
+package hw.oop.task1_2_3_4;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,25 +18,22 @@ class StatKit {
 
     public StatKit() {}
 
-    public void sortKitPrice() {
-        Collections.sort(kit, getStationeryPriceComparator());
+    public void sortByPrice(){
+        Collections.sort(kit, getPriceComparator());
     }
-
-    private Comparator<Stationery> getStationeryPriceComparator() {
-        return (stationery1, stationery2) -> {
-            if (stationery1.getPrice() > stationery2.getPrice())
-                return 1;
-            else if (stationery1.getPrice() == stationery2.getPrice())
-                return 0;
-            else
-                return -1;
+    private Comparator<Stationery> getPriceComparator() {
+        return (s1, s2) -> {
+            Double d1 = s1.getPrice();
+            Double d2 = s2.getPrice();
+            return d1.compareTo(d2);
         };
     }
-    public void sortKitName() {
-        Collections.sort(kit, getStationeryNameComparator());
+    public void sortByName(){
+        Collections.sort(kit, getNameComparator());
+        kit.sort(getNameComparator());
     }
 
-    private Comparator<Stationery> getStationeryNameComparator() {
+    private Comparator<Stationery> getNameComparator() {
         return (stationery1, stationery2) -> stationery1.getName().compareTo(stationery2.getName());
     }
 }

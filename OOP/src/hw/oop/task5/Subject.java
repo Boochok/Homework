@@ -1,4 +1,4 @@
-package jse.oop.task5;
+package hw.oop.task5;
 
 public enum Subject {
     MATH {

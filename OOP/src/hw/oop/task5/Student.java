@@ -1,4 +1,4 @@
-package jse.oop.task5;
+package hw.oop.task5;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,15 +19,16 @@ public class Student {
         mark.value = subject.isFloat() ? mark.getValue().doubleValue() : mark.getValue().intValue();
         subjects.put(subject, mark);
     }
+
     public Map getSubjects() {
         return subjects;
     }
-
 
     @Override
     public String toString(){
         return name;
     }
+
     public static class Mark<T extends Number> {
         public void setValue(T value) {
             this.value = value;

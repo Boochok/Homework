@@ -1,4 +1,4 @@
-package jse.oop.task6_7;
+package hw.oop.task6_7;
 
 @OuterClass
 class AtomicBoat {

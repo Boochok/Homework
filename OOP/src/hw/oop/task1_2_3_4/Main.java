@@ -1,4 +1,4 @@
-package jse.oop.task1_2_3_4;
+package hw.oop.task1_2_3_4;
 
 
 
@@ -14,9 +14,9 @@ class Main {
         stkit.setKit(pencil);
         stkit.setKit(pen);
         System.out.println(stkit.getKit());
-        stkit.sortKitPrice();
+        stkit.sortByPrice();
         System.out.println(stkit.getKit());
-        stkit.sortKitName();
+        stkit.sortByName();
         System.out.println(stkit.getKit());
         Scissors scissors = new Scissors(50);
         stkit.setKit(scissors);
