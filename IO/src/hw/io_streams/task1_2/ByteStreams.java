@@ -1,4 +1,4 @@
-package hw.io_streams;
+package hw.io_streams.task1_2;
 
 import java.io.*;
 import java.util.Arrays;
