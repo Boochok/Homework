@@ -1,10 +1,9 @@
 package hw.io_streams;
 
 import java.io.*;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class ByteStreams {
 
@@ -23,23 +22,20 @@ public class ByteStreams {
     }
 
     public static void writeKeysIntoFile(String content,String path) throws IOException {
-        try(BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(path))){
-            byte[] keyWordsInBytes = content.getBytes();
-            bos.write(keyWordsInBytes);
+        try(PrintStream ps = new PrintStream(new FileOutputStream(path))){
+            String[] list = content.split("[{}, ]+");
+            for (String s : list) {
+                ps.println(s);
+            }
+//        StringTokenizer st = new StringTokenizer(content, ", {}");
+//            while(st.hasMoreTokens()){
+//                ps.println(st.nextToken());
+//            }
+//        Scanner scanner = new Scanner(content);
+//            scanner.useDelimiter("[{}, ]+");
+//            while (scanner.hasNext()){
+//                ps.println(scanner.next());
+//            }
         }
-    }
-    public static String findTheKeyWords(String fileContent){
-        Map<String, Integer> map = new LinkedHashMap<>();
-        Pattern pattern = Pattern.compile("\\b(abstract|assert|boolean|byte|break|case|catch|char|class|const|" +
-                "continue|default|do|double|enum|else|extends|final|finally|for|" +
-                "float|goto|if|implements|import|instanceof|int|interface|long|native|" +
-                "new|package|public|private|protected|return|short|static|strictfp|super|" +
-                "switch|synchronized|this|throw|throws|try|transient|void|volatile|while)");
-        Matcher matcher = pattern.matcher(fileContent);
-        int countValue = 0;
-        while(matcher.find()){
-            map.put(matcher.group(), map.getOrDefault(matcher.group(), countValue) + 1);
-        }
-        return map.toString();
     }
 }
