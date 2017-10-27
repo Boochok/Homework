@@ -1,4 +1,4 @@
-package hw.io_streams.task1_2;
+package hw.io.task1_2;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;

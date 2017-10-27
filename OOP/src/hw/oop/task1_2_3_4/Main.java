@@ -1,7 +1,5 @@
 package hw.oop.task1_2_3_4;
 
-
-
 class Main {
     public static void main(String[] args) {
         Eraser eraser = new Eraser(5.99);

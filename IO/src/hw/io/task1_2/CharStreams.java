@@ -1,4 +1,4 @@
-package hw.io_streams.task1_2;
+package hw.io.task1_2;
 
 import java.io.*;
 import java.util.Arrays;
@@ -7,7 +7,7 @@ import java.util.StringTokenizer;
 
 public class CharStreams {
 
-    public static String parseJavaFile(String path, String charset) throws IOException {
+    public static String readJavaFile(String path, String charset) throws IOException {
         StringBuilder content = new StringBuilder();
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(
                 new FileInputStream(path), charset))) {
