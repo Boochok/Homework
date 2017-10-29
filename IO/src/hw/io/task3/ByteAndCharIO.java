@@ -4,6 +4,7 @@ import java.io.*;
 
 public class ByteAndCharIO {
 
+
     public static void main(String[] args) throws IOException {
         readAndWrite("IO\\resources\\task3.txt","toFile.txt");
     }

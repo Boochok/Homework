@@ -12,12 +12,12 @@ import org.jsoup.select.*;
 
 public class PicturesAtArticle {
     public static void main(String[] args) throws IOException {
-//        PicturesAtArticle pictures = new PicturesAtArticle();
-        Document doc = Jsoup.parse(readHTML("String\\resources\\AnalyzedFile.html", "windows-1251"));
-        String text = doc.text();
-        System.out.println(text);
+        PicturesAtArticle pictures = new PicturesAtArticle();
+//        Document doc = Jsoup.parse(readHTML("String\\resources\\AnalyzedFile.html", "windows-1251"));
+//        String text = doc.text();
+//        System.out.println(text);
 
-//        pictures.findThePictures(readHTML("String\\resources\\AnalyzedFile.html", "windows-1251"));
+        pictures.findThePictures(readHTML("String\\resources\\AnalyzedFile.html", "windows-1251"));
     }
 
     public void findThePictures(String text) throws IOException {
