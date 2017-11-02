@@ -4,6 +4,6 @@ public class WriteThread implements Runnable {
     CrazyLogger cl = new CrazyLogger();
     @Override
     public void run(){
-        cl.record(Thread.currentThread().getName());
+        cl.record("thread " + Thread.currentThread().getName() + " have been written to the CrazyLogger");
      }
 }
