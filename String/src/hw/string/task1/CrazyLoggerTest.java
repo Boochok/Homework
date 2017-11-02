@@ -1,7 +1,5 @@
 package hw.string.task1;
 
-
-import java.util.Arrays;
 import java.util.Date;
 
 public class CrazyLoggerTest {
@@ -13,11 +11,31 @@ public class CrazyLoggerTest {
     }
     public void go(){
         cl.record("first message");
-        cl.record("message2");
-        cl.record("massage3");
+        cl.record("message 2");
+        cl.record("massage 3");
         System.out.println(cl.getTape());
         System.out.println("============");
-        System.out.println("Message have to contains \"3\" " + cl.findInformation("3"));
-        System.out.printf("Today's message: %n%s", cl.findByDate(new Date()));
+        System.out.println("Message have to contains \"8\" " + cl.findInformation("8"));
+        System.out.println("============");
+        Date date = new Date();
+        System.out.printf("Today's message: %n%s%n", cl.findByDate(date));
+        System.out.println("============");
+        Thread t1 = new Thread(new WriteThread());
+        Thread t2 = new Thread(new WriteThread());
+        t1.setName("One");
+        t2.setName("Two");
+        t1.start();
+        t2.start();
+        try {
+            t1.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        try {
+            t2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(cl.getTape());
     }
 }

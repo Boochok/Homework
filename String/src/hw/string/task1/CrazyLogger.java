@@ -15,9 +15,11 @@ public class CrazyLogger {
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-YYYY : HH-mm");
 
 
-    public synchronized void record(String message) {
+    public void record(String message) {
         Date date = new Date();
-        tape.append(sdf.format(date)).append(" - ").append(message).append("; ");
+        synchronized (tape) {
+            tape.append(sdf.format(date)).append(" - ").append(message).append("; ");
+        }
     }
 
     static String[] watchTheTape() {
@@ -32,12 +34,14 @@ public class CrazyLogger {
             find.delete(0, find.length());
         synchronized (find) {
             for (String piece : pieceOfTape) {
-                if (piece.contains(pattern))
-                    find.append(piece).append(";");
+                String[] message = piece.split(" - ");
+                if (message[1].contains(pattern))
+                    find.append(piece).append("; ");
+                else
+                    continue;
             }
         }
-
-        return find.toString();
+        return find.length() == 0 ? "CrazyLogger doesn't have such message" : find.toString();
     }
 
     public String findByDate(Date date) {
@@ -45,19 +49,18 @@ public class CrazyLogger {
         String stringDate = sdf.format(date);
         if (find.length() != 0)
             find.delete(0, find.length());
-        puzzleFinding(stringDate);
-
-        return find.toString();
+        return puzzleFinding(stringDate);
     }
 
-    private synchronized void puzzleFinding(String stringDate) {
-        find = find.append(stringDate + ": \n");
+    private synchronized String puzzleFinding(String stringDate) {
         pieceOfTape = watchTheTape();
         for (String log : pieceOfTape) {
-            if (log.startsWith(stringDate)) {
-                String[] s = log.split(" : ");
-                find.append(s[1] + "\n");
-            }
+            if (!log.startsWith(stringDate))
+                continue;
+            find = find.append(stringDate + ": ");
+            String[] s = log.split(" : ");
+            find.append(s[1] + "; ");
         }
+        return find.length() == 0 ? "CrazyLogger doesn't have such information." : find.toString();
     }
 }
