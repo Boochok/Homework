@@ -12,8 +12,8 @@ public class PicturesAtArticle {
         PicturesAtArticle pictures = new PicturesAtArticle();
         String text = pictures.readHTML("String\\resources\\AnalyzedFile.html", "windows-1251");
         List<String> picturesRef = pictures.findThePictures(text);
+        System.out.println("Ссылается ли автор на рисунки последовательно - " + isAscendingOrder(picturesRef));
         System.out.println(picturesRef.toString());
-        System.out.println(isAscendingOrder(picturesRef));
     }
 
     public List<String> findThePictures(String text) throws IOException {

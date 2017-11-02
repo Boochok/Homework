@@ -1,4 +1,4 @@
-package answers;
+package answers_task2;
 
 import java.util.ListResourceBundle;
 

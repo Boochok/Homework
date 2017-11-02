@@ -4,7 +4,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class App {
-    ResourceBundle bundle;
+    private ResourceBundle bundle;
 
     public String ask(Locale locale, String numberOfQuestion){
         bundle = ResourceBundle.getBundle("question", locale);
@@ -14,11 +14,11 @@ public class App {
         return ask(Locale.getDefault(), numberOfQuestion);
     }
 
-    public String answer(Locale locale, String numberOfQuestion){
-        bundle = ResourceBundle.getBundle("answers.Answer", locale);
-        return bundle.getString(numberOfQuestion);
+    public Object answer(Locale locale, String numberOfQuestion){
+        bundle = ResourceBundle.getBundle("answers_task2.Answer", locale);
+        return bundle.getObject(numberOfQuestion);
     }
-    public String answer(String numberOfQuestion){
+    public Object answer(String numberOfQuestion){
         return answer(Locale.getDefault(), numberOfQuestion);
     }
 }
