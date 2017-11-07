@@ -15,7 +15,7 @@ public class CrazyLoggerTest {
         cl.record("massage 3");
         System.out.println(cl.getTape());
         System.out.println("============");
-        System.out.println("Message have to contains \"8\" " + cl.findInformation("8"));
+        cl.findInformation("3");
         System.out.println("============");
         Date date = new Date();
         System.out.printf("Today's message: %n%s%n", cl.findByDate(date));

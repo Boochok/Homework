@@ -28,7 +28,7 @@ public class CrazyLogger {
 
     static String[] pieceOfTape;
 
-    public String findInformation(String pattern) {
+    public void findInformation(String pattern) {
         pieceOfTape = watchTheTape();
         if (find.length() != 0)
             find.delete(0, find.length());
@@ -41,7 +41,8 @@ public class CrazyLogger {
                     continue;
             }
         }
-        return find.length() == 0 ? "CrazyLogger doesn't have such message" : find.toString();
+        String result = find.length() == 0 ? "CrazyLogger doesn't have such message" : find.toString();
+        System.out.println(result);
     }
 
     public String findByDate(Date date) {
