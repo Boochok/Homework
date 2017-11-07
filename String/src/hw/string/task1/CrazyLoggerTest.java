@@ -18,7 +18,7 @@ public class CrazyLoggerTest {
         cl.findInformation("3");
         System.out.println("============");
         Date date = new Date();
-        System.out.printf("Today's message: %n%s%n", cl.findByDate(date));
+        cl.findByDate(date);
         System.out.println("============");
         Thread t1 = new Thread(new WriteThread());
         Thread t2 = new Thread(new WriteThread());

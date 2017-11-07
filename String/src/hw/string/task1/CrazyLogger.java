@@ -45,12 +45,12 @@ public class CrazyLogger {
         System.out.println(result);
     }
 
-    public String findByDate(Date date) {
+    public void findByDate(Date date) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         String stringDate = sdf.format(date);
         if (find.length() != 0)
             find.delete(0, find.length());
-        return puzzleFinding(stringDate);
+        System.out.println(puzzleFinding(stringDate));
     }
 
     private synchronized String puzzleFinding(String stringDate) {
