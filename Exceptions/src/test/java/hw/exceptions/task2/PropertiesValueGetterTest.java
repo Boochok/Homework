@@ -1,4 +1,4 @@
-package hw.exceptions.task1;
+package hw.exceptions.task2;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -7,9 +7,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PropertiesValueGetterTest {
 
+
     PropertiesValueGetter pg = new PropertiesValueGetter();
     String testFile = "Exceptions\\src\\test\\resources\\test.properties";
     String fileNotExist = "param\\pam";
+
+    @Test
+    void readPropertyFile() {
+        pg.readPropertyFile(testFile);
+    }
 
     @Test
     @DisplayName("getPropertiesValue works correctly")

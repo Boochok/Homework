@@ -1,4 +1,4 @@
-package hw.exceptions.task1;
+package hw.exceptions.task2;
 
 import java.security.InvalidParameterException;
 import java.util.Properties;
