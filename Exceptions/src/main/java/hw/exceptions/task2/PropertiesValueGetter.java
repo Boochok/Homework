@@ -8,9 +8,9 @@ import java.util.*;
 public class PropertiesValueGetter {
 
     private Properties properties = new PropertiesWithKeyOnly();
-    Map<Object, Object> propertyMap = new HashMap<>();
+    private Map<Object, Object> propertyMap = new HashMap<>();
 
-    void readPropertyFile(String propertyFile) {
+    private void readPropertyFile(String propertyFile) {
 
         try {
             try (InputStream is = new FileInputStream(propertyFile)) {
@@ -31,7 +31,7 @@ public class PropertiesValueGetter {
 
     }
 
-    public String getPropertiesValue(String fileName, String key) {
+    public synchronized String getPropertiesValue(String fileName, String key) {
 
         String value = "";
 
